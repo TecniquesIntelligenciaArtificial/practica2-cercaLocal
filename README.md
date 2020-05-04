@@ -25,9 +25,14 @@ We want a solution for a given month. We want a plan where everybody gets to her
 * There may be users that are in the *driver* shift that do not need to drive
 
 ### Scoring
-* Each non driving user earns the number of points equal to the distance between her origin and destination *distance(o,d)*
-* Each driving user earns the number of points equal to maximum distance she can drive minus the overhead distance she needs to drive in order to drive other users to their destination. That is MAX_DISTANCA - (actual driven distance - distance(o,d))
-* Note that a driver user that finaly doesn't drive wins the most points 
+See that we need to maximize the number of users that get to their destination while minimizing the total amount of driven distance
+* Each non driving user earns the number of points equal to the distance between her origin and destination *distance(o,d)* plus MAX_DISTANCE
+* Each driving user earns the number of points equal to maximum distance she can drive minus the overhead distance she needs 
+to drive in order to lift other users to their destination. That is MAX_DISTANCE - (actual driven distance - distance(o,d))
+* Note that a driver user that finally doesn't drive wins the most points 
+
+## What you have
+In directory 'i_o_files' you'll find a set of problems for which you need to find the solution with the highest score (value). There is a small problem (5 drivers) 
 
 ## What you should do
 You are going to solve this problem with local search and perform several experiments to compare different solutions and algorithms. You want to get the best scoring for the scenarios in the input files.

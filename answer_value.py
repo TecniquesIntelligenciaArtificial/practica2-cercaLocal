@@ -22,18 +22,18 @@ def answer_value(name):
         # driver only counts if not alone
         if passengers:
             actual_distance = driven_distance(driver)
-            min_distance = utils.hamming_distance(drivers[driver[0][0]][1], drivers[driver[0][0]][2])
+            min_distance = utils.manhattan_distance(drivers[driver[0][0]][1], drivers[driver[0][0]][2])
             value += MAX_DISTANCE - (actual_distance - min_distance)
             print(driver[0][0], ' ', MAX_DISTANCE - (actual_distance - min_distance))
 
         # passengers
         for passenger in passengers:
             if passenger >= D:  # passenger that's not a driver
-                value += utils.hamming_distance(users[passenger-D][1], users[passenger-D][2]) + MAX_DISTANCE
-                print(driver[0][0], ' ',utils.hamming_distance(users[passenger-D][1], users[passenger-D][2]))
+                value += utils.manhattan_distance(users[passenger - D][1], users[passenger - D][2]) + MAX_DISTANCE
+                print(driver[0][0], ' ', utils.manhattan_distance(users[passenger - D][1], users[passenger - D][2]))
             else:
-                value += utils.hamming_distance(drivers[passenger][1], drivers[passenger][2]) + MAX_DISTANCE
-                print(driver[0][0], ' ',utils.hamming_distance(drivers[passenger][1], drivers[passenger][2]))
+                value += utils.manhattan_distance(drivers[passenger][1], drivers[passenger][2]) + MAX_DISTANCE
+                print(driver[0][0], ' ', utils.manhattan_distance(drivers[passenger][1], drivers[passenger][2]))
     return value
 
 

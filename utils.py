@@ -4,7 +4,7 @@ def pairwise(iterable):
     return zip(a, a)
 
 
-def hamming_distance(o, d):
+def manhattan_distance(o, d):
     ox, oy = o
     dx, dy = d
     return abs(ox-dx)+abs(oy-dy)

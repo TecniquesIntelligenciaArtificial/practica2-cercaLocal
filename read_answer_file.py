@@ -80,7 +80,7 @@ def drivers_within_distance(drivers):
 
 def driven_distance(driver):
     points = get_driver_destinations(driver)
-    return sum([utils.hamming_distance(o, d) for o,d in zip(points[:-1], points[1:])])
+    return sum([utils.manhattan_distance(o, d) for o, d in zip(points[:-1], points[1:])])
 
 
 def get_driver_destinations(driver):

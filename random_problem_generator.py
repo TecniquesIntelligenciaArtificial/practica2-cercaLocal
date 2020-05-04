@@ -27,11 +27,11 @@ generate_and_save_problem(5, 2, 'i_o_files/small_5_2.in')
 generate_and_save_problem(5, 7, 'i_o_files/small_5_7.in')
 generate_and_save_problem(5, 15, 'i_o_files/small_5_15.in')
 
-generate_and_save_problem(100, 50, 'i_o_files/small_100_50.in')
-generate_and_save_problem(100, 150, 'i_o_files/small_100_150.in')
-generate_and_save_problem(100, 300, 'i_o_files/small_100_300.in')
+generate_and_save_problem(100, 50, 'i_o_files/medium_100_50.in')
+generate_and_save_problem(100, 150, 'i_o_files/medium_100_150.in')
+generate_and_save_problem(100, 300, 'i_o_files/medium_100_300.in')
 
-generate_and_save_problem(1000, 500, 'i_o_files/small_100_500.in')
-generate_and_save_problem(1000, 1500, 'i_o_files/small_100_1500.in')
-generate_and_save_problem(1000, 3000, 'i_o_files/small_100_3000.in')
+generate_and_save_problem(1000, 500, 'i_o_files/big_1000_500.in')
+generate_and_save_problem(1000, 1500, 'i_o_files/big_1000_1500.in')
+generate_and_save_problem(1000, 3000, 'i_o_files/big_1000_3000.in')
 
