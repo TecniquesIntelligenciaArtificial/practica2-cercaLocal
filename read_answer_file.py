@@ -137,6 +137,6 @@ def users_appear_once_at_most(answer):
     return True
 
 
-answer = parse_answer('i_o_files/small_5_2' + '.out')
-N, M, D, U, drivers, users = rif.parse_in('i_o_files/small_5_2' + '.in')
-print('legal: ', legal_answer(answer, D, drivers, users))
+# answer = parse_answer('i_o_files/small_5_2' + '.out')
+# N, M, D, U, drivers, users = rif.parse_in('i_o_files/small_5_2' + '.in')
+# print('legal: ', legal_answer(answer, D, drivers, users))

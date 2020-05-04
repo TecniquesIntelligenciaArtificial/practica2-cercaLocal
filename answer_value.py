@@ -1,9 +1,6 @@
-from read_answer_file import parse_answer
-from read_answer_file import legal_answer
-from read_answer_file import driven_distance
-from read_answer_file import get_driver_idx_passengers
+from read_answer_file import (parse_answer, legal_answer, driven_distance, get_driver_idx_passengers)
 import read_in_file as rif
-import utils
+from utils import manhattan_distance
 
 
 MAX_DISTANCE = 300
@@ -22,18 +19,15 @@ def answer_value(name):
         # driver only counts if not alone
         if passengers:
             actual_distance = driven_distance(driver)
-            min_distance = utils.manhattan_distance(drivers[driver[0][0]][1], drivers[driver[0][0]][2])
+            min_distance = manhattan_distance(drivers[driver[0][0]][1], drivers[driver[0][0]][2])
             value += MAX_DISTANCE - (actual_distance - min_distance)
-            print(driver[0][0], ' ', MAX_DISTANCE - (actual_distance - min_distance))
 
         # passengers
         for passenger in passengers:
             if passenger >= D:  # passenger that's not a driver
-                value += utils.manhattan_distance(users[passenger - D][1], users[passenger - D][2]) + MAX_DISTANCE
-                print(driver[0][0], ' ', utils.manhattan_distance(users[passenger - D][1], users[passenger - D][2]))
+                value += manhattan_distance(users[passenger - D][1], users[passenger - D][2]) + MAX_DISTANCE
             else:
-                value += utils.manhattan_distance(drivers[passenger][1], drivers[passenger][2]) + MAX_DISTANCE
-                print(driver[0][0], ' ', utils.manhattan_distance(drivers[passenger][1], drivers[passenger][2]))
+                value += manhattan_distance(drivers[passenger][1], drivers[passenger][2]) + MAX_DISTANCE
     return value
 
 
@@ -42,4 +36,4 @@ def get_driver_passengers_idx(driver):
     return set(pass_and_driver[1:-1])
 
 
-print('value: ', answer_value('i_o_files/small_5_2'))
+# print('value: ', answer_value('i_o_files/small_5_2'))
