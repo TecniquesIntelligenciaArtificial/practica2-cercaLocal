@@ -6,9 +6,9 @@ from utils import manhattan_distance
 MAX_DISTANCE = 300
 
 
-def answer_value(name):
-    answer = parse_answer(name + '.out')
-    N, M, D, U, drivers, users = rif.parse_in(name + '.in')
+def answer_value(out_name, in_name):
+    answer = parse_answer(out_name + '.out')
+    N, M, D, U, drivers, users = rif.parse_in(in_name + '.in')
     if not legal_answer(answer, D, drivers, users):
         return 0
 
@@ -35,5 +35,17 @@ def get_driver_passengers_idx(driver):
     pass_and_driver = get_driver_idx_passengers(driver)
     return set(pass_and_driver[1:-1])
 
+
+def get_total_driven_distance(out_name, in_name):
+    answer = parse_answer(out_name + '.out')
+    N, M, D, U, drivers, users = rif.parse_in(in_name + '.in')
+    if not legal_answer(answer, D, drivers, users):
+        return 0
+
+    value = 0
+    for driver in answer:
+        value += driven_distance(driver)
+
+    return value
 
 # print('value: ', answer_value('i_o_files/small_5_2'))

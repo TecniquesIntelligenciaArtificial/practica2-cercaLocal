@@ -1,5 +1,4 @@
 from collections import defaultdict
-import read_in_file as rif
 import utils
 
 MAX_DISTANCE = 300
